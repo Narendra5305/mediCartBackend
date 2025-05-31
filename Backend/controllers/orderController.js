@@ -2,8 +2,15 @@ const {OrderModel} = require('../models/order.model')
 
 
 const GetOrderData = async(req , res)=>{
-    
+    try {
+        const orders = await OrderModel.find();
+        res.status(200).json({ success: true, data: orders });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Failed to fetch orders', error: error.message });
+    }
 }
+
+
 
 const PostOrderData = async(req , res)=>{
     const {role , userId } = req ;

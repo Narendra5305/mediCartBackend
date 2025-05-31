@@ -11,7 +11,7 @@ const  {GetUsersData , GetProfileData,  RegistrationUserData , LoginUser , Patch
 userRouter.get('/' ,auth , rbac(["admin"]) ,  GetUsersData)
 
 
-userRouter.get('/:id' ,auth  ,  GetProfileData)
+userRouter.get('/profile' ,auth  ,  GetProfileData)
 
 
 
