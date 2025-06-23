@@ -3,6 +3,7 @@ const ConnectedToDB = require("./config")
 const {productRouter} = require("./routes/productRoute")
 const {userRouter} = require("./routes/userRoute")
 const {orderRouter} = require("./routes/orderRoute")
+const {chatBoatRouter} = require("./routes/chatBoat")
 const cors = require('cors');
 
 const app = express();
@@ -23,6 +24,7 @@ app.use(
 app.use('/users' , userRouter )
 app.use('/products' , productRouter )
 app.use('/orders' , orderRouter)
+app.use('/chat' , chatBoatRouter)
 
 
 app.get('/',(req,res)=>{
